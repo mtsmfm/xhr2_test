@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %title hi
+    %script{src: 'http://code.jquery.com/jquery-2.0.3.min.js'}
+  %body
+    %h1
+  :coffee
+    $.get 'http://127.0.0.1:4568/hi', {}, (data) ->
+      data = $.parseJSON(data)
+      $('h1').text(data.message)
